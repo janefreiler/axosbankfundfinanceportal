@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axos Bank Fund Finance Portal - Client Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/documents.css">
+  <link rel="stylesheet" href="css/messaging.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <h2>Axos Bank Fund Finance Portal</h2>
+      </div>
+      <div class="navbar-menu">
+        <a href="#" class="nav-link active">Dashboard</a>
+        <a href="#" class="nav-link">Documents</a>
+        <a href="#" class="nav-link">Messages</a>
+        <a href="#" class="nav-link">Settings</a>
+        <button class="btn btn-secondary btn-sm">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mt-4">
+    <!-- Dashboard Section -->
+    <section class="dashboard-header">
+      <h1>Welcome back, John Smith</h1>
+      <p class="user-greeting">Here's an overview of your active deals and pending documents.</p>
+    </section>
+
+    <!-- Quick Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Active Deals</div>
+        <div class="stat-value">3</div>
+      </div>
+      <div class="stat-card warning">
+        <div class="stat-label">Pending Documents</div>
+        <div class="stat-value">5</div>
+      </div>
+      <div class="stat-card success">
+        <div class="stat-label">Documents Approved</div>
+        <div class="stat-value">12</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Unread Messages</div>
+        <div class="stat-value">2</div>
+      </div>
+    </div>
+
+    <!-- Active Deals -->
+    <section class="deals-section mb-4">
+      <h2>Your Active Facilities</h2>
+      <ul class="deal-list">
+        <li class="deal-item">
+          <div class="deal-header">
+            <h3 class="deal-title">ABC Corporation - $5M Facility</h3>
+            <span class="deal-status status-active">Active</span>
+          </div>
+          <div class="deal-meta">
+            <div class="meta-item">
+              <span class="meta-label">Underwriter</span>
+              <span>Sarah Johnson</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Start Date</span>
+              <span>June 1, 2026</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Expected Closure</span>
+              <span>August 15, 2026</span>
+            </div>
+          </div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Application Progress</span>
+              <span>75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+          </div>
+        </li>
+        <li class="deal-item">
+          <div class="deal-header">
+            <h3 class="deal-title">XYZ Industries - $3M Facility</h3>
+            <span class="deal-status status-pending">In Review</span>
+          </div>
+          <div class="deal-meta">
+            <div class="meta-item">
+              <span class="meta-label">Underwriter</span>
+              <span>Michael Chen</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Start Date</span>
+              <span>June 15, 2026</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Expected Closure</span>
+              <span>September 1, 2026</span>
+            </div>
+          </div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Application Progress</span>
+              <span>45%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="documents-container mb-4">
+      <div class="documents-header">
+        <h2>Documents</h2>
+        <button class="btn btn-primary">Upload New Document</button>
+      </div>
+
+      <!-- Upload Area -->
+      <div class="upload-section">
+        <div class="upload-icon">📁</div>
+        <p class="upload-text">Drag and drop documents here or click to browse</p>
+        <p class="upload-hint">Supported: PDF, DOC, DOCX, XLS, XLSX, PNG, JPG (Max 10MB)</p>
+        <input type="file" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg">
+      </div>
+
+      <!-- Document Categories -->
+      <div class="document-categories">
+        <div class="category-tabs">
+          <button class="category-tab active" onclick="switchTab('all')">All Documents</button>
+          <button class="category-tab" onclick="switchTab('financial')">Financial Statements</button>
+          <button class="category-tab" onclick="switchTab('legal')">Legal Documents</button>
+          <button class="category-tab" onclick="switchTab('tax')">Tax Documents</button>
+        </div>
+
+        <!-- Document List -->
+        <ul class="document-list" data-tab="all">
+          <li class="document-item">
+            <div class="document-info">
+              <div class="document-icon">📊</div>
+              <div class="document-details">
+                <div class="document-name">2025 Financial Statements</div>
+                <div class="document-meta">Size: 2.3 MB • Uploaded: June 10, 2026</div>
+              </div>
+            </div>
+            <div>
+              <span class="document-status status-approved">Approved</span>
+              <div class="document-actions">
+                <button class="doc-action-btn" onclick="downloadDocument(this)" title="Download">↓</button>
+                <button class="doc-action-btn delete" onclick="deleteDocument(this)" title="Delete">✕</button>
+              </div>
+            </div>
+          </li>
+          <li class="document-item">
+            <div class="document-info">
+              <div class="document-icon">📝</div>
+              <div class="document-details">
+                <div class="document-name">Articles of Incorporation</div>
+                <div class="document-meta">Size: 456 KB • Uploaded: June 8, 2026</div>
+              </div>
+            </div>
+            <div>
+              <span class="document-status status-pending-review">Under Review</span>
+              <div class="document-actions">
+                <button class="doc-action-btn" onclick="downloadDocument(this)" title="Download">↓</button>
+                <button class="doc-action-btn delete" onclick="deleteDocument(this)" title="Delete">✕</button>
+              </div>
+            </div>
+          </li>
+          <li class="document-item">
+            <div class="document-info">
+              <div class="document-icon">📄</div>
+              <div class="document-details">
+                <div class="document-name">Bank Statement - June 2026</div>
+                <div class="document-meta">Size: 1.1 MB • Uploaded: June 15, 2026</div>
+              </div>
+            </div>
+            <div>
+              <span class="document-status status-uploaded">Uploaded</span>
+              <div class="document-actions">
+                <button class="doc-action-btn" onclick="downloadDocument(this)" title="Download">↓</button>
+                <button class="doc-action-btn delete" onclick="deleteDocument(this)" title="Delete">✕</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Messaging Section -->
+    <section class="mb-4">
+      <h2 style="margin-bottom: var(--spacing-lg);">Messages</h2>
+      <div class="messaging-container">
+        <!-- Conversations List -->
+        <div class="conversations-panel">
+          <div class="conversations-header">
+            <h3>Conversations</h3>
+          </div>
+          <ul class="conversations-list">
+            <li class="conversation-item active">
+              <div class="conversation-name">Sarah Johnson</div>
+              <div class="conversation-preview">Sure! I'll review those documents...</div>
+              <div class="conversation-timestamp">Today</div>
+            </li>
+            <li class="conversation-item">
+              <div class="conversation-name">Michael Chen</div>
+              <div class="conversation-preview">Thank you for submitting the...</div>
+              <div class="conversation-timestamp">Yesterday</div>
+            </li>
+            <li class="conversation-item">
+              <div class="conversation-name">Team Support</div>
+              <div class="conversation-preview">Your facility has been approved!</div>
+              <div class="conversation-timestamp">3 days ago</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Message Thread -->
+        <div class="message-thread">
+          <div class="thread-header">
+            <h3 class="thread-title">Sarah Johnson</h3>
+            <div class="thread-meta">Underwriter for ABC Corporation Facility</div>
+          </div>
+
+          <!-- Messages -->
+          <div class="messages-container">
+            <div class="message received">
+              <div class="message-avatar">SJ</div>
+              <div class="message-content">
+                <div class="message-bubble">Hi John, I've reviewed your initial application. Everything looks good so far.</div>
+                <div class="message-time">10:30 AM</div>
+              </div>
+            </div>
+            <div class="message sent">
+              <div class="message-content">
+                <div class="message-bubble">Great! When will you need the supporting documents?</div>
+                <div class="message-time">10:45 AM</div>
+              </div>
+              <div class="message-avatar">You</div>
+            </div>
+            <div class="message received">
+              <div class="message-avatar">SJ</div>
+              <div class="message-content">
+                <div class="message-bubble">We'll need them by end of week. Financial statements, tax returns, and bank statements.</div>
+                <div class="message-time">10:50 AM</div>
+              </div>
+            </div>
+            <div class="message received">
+              <div class="message-avatar">SJ</div>
+              <div class="message-content">
+                <div class="message-bubble">Sure! I'll review those documents once you upload them. You can use the Documents section above.</div>
+                <div class="message-time">11:00 AM</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Input -->
+          <div class="message-input-area">
+            <form class="message-form">
+              <textarea class="message-input" placeholder="Type your message..."></textarea>
+              <button type="submit" class="message-send-btn">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--neutral-dark); color: white; padding: var(--spacing-xl); text-align: center; margin-top: var(--spacing-2xl);">
+    <p>&copy; 2026 Axos Bank. All rights reserved. | <a href="#" style="color: #60a5fa;">Privacy Policy</a> | <a href="#" style="color: #60a5fa;">Terms of Service</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>

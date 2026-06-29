@@ -1,0 +1,233 @@
+/* Documents Management Styles */
+
+.documents-container {
+  background-color: var(--neutral-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.documents-header {
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.documents-header h2 {
+  margin: 0;
+}
+
+/* Upload Section */
+.upload-section {
+  background-color: var(--neutral-light);
+  border: 2px dashed #d1d5db;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.upload-section:hover {
+  border-color: var(--primary-color);
+  background-color: #f0f4ff;
+}
+
+.upload-section.dragover {
+  border-color: var(--primary-color);
+  background-color: #f0f4ff;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.upload-text {
+  color: var(--neutral-gray);
+  margin: 0;
+}
+
+.upload-hint {
+  font-size: var(--font-size-sm);
+  color: #9ca3af;
+  margin-top: var(--spacing-sm);
+}
+
+input[type='file'] {
+  display: none;
+}
+
+/* Document Categories */
+.document-categories {
+  margin-bottom: var(--spacing-xl);
+}
+
+.category-tabs {
+  display: flex;
+  gap: var(--spacing-md);
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: var(--spacing-lg);
+  overflow-x: auto;
+}
+
+.category-tab {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  background: none;
+  color: var(--neutral-gray);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.category-tab:hover {
+  color: var(--primary-color);
+}
+
+.category-tab.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Document List */
+.document-list {
+  list-style: none;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+  transition: all 0.2s ease;
+}
+
+.document-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.document-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: var(--spacing-md);
+}
+
+.document-icon {
+  font-size: 1.5rem;
+  min-width: 2rem;
+}
+
+.document-details {
+  flex: 1;
+}
+
+.document-name {
+  font-weight: 600;
+  color: var(--neutral-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.document-meta {
+  font-size: var(--font-size-sm);
+  color: var(--neutral-gray);
+}
+
+.document-status {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-right: var(--spacing-md);
+}
+
+.status-approved {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-pending-review {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-uploaded {
+  background-color: #dbeafe;
+  color: #0c2340;
+}
+
+.document-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.doc-action-btn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-md);
+  color: var(--neutral-gray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc-action-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.doc-action-btn.delete:hover {
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--neutral-gray);
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .documents-header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .category-tabs {
+    flex-wrap: nowrap;
+  }
+
+  .document-item {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .document-actions {
+    margin-top: var(--spacing-md);
+    width: 100%;
+  }
+}
