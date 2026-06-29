@@ -1,0 +1,1 @@
+Fund Banking client portal where clients to Fund Banking can see the entire process of their facility from the beginning to the end. Will include a place to drop all necessary documents for due diligence, messaging system to the specific underwriter working on the deal and active deals.
