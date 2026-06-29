@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Axos Bank Fund Finance Portal - Client portal for facility tracking and document management">
+    <meta name="theme-color" content="#003366">
+    <title>Axos Bank Fund Finance Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/documents.css">
+    <link rel="stylesheet" href="css/messaging.css">
+    <link rel="stylesheet" href="css/notifications.css">
+</head>
+<body>
+    <!-- Skip navigation link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🏦</span>
+                    <span class="logo-text">Axos Bank</span>
+                </a>
+                <span class="portal-name">Fund Finance Portal</span>
+            </div>
+
+            <!-- Mobile menu toggle -->
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+
+            <!-- Navigation menu -->
+            <ul class="navbar-menu" id="navbar-menu" role="menubar">
+                <li><a href="#dashboard" class="nav-link active" role="menuitem" data-section="dashboard">Dashboard</a></li>
+                <li><a href="#documents" class="nav-link" role="menuitem" data-section="documents">Documents</a></li>
+                <li><a href="#messaging" class="nav-link" role="menuitem" data-section="messaging">Messages</a></li>
+                <li><a href="#settings" class="nav-link" role="menuitem" data-section="settings">Settings</a></li>
+            </ul>
+
+            <!-- User menu -->
+            <div class="navbar-user">
+                <button class="notification-button" id="notification-button" aria-label="Notifications" aria-expanded="false">
+                    <span class="notification-icon">🔔</span>
+                    <span class="notification-badge" id="notification-badge" style="display: none;">0</span>
+                </button>
+                <div class="user-menu">
+                    <button class="user-menu-button" id="user-menu-button" aria-label="User menu" aria-expanded="false">
+                        <span class="user-avatar">JF</span>
+                        <span class="user-name">Jane Freiler</span>
+                    </button>
+                    <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                        <a href="#profile" class="dropdown-link">Profile</a>
+                        <a href="#settings" class="dropdown-link">Settings</a>
+                        <hr class="dropdown-divider">
+                        <a href="#logout" class="dropdown-link logout-link">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main id="main-content" class="main-content">
+        <!-- Notifications container -->
+        <div id="notifications-container" class="notifications-container" role="region" aria-live="polite" aria-label="Notifications"></div>
+
+        <!-- Dashboard section -->
+        <section id="dashboard" class="section active" data-section="dashboard" aria-label="Dashboard">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Dashboard</h1>
+                    <p class="section-subtitle">Welcome back, Jane! Here's an overview of your active deals.</p>
+                </div>
+
+                <!-- Quick stats -->
+                <div class="quick-stats" aria-label="Quick statistics">
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Active Deals</div>
+                            <div class="stat-value" id="stat-active-deals">3</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📄</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Pending Documents</div>
+                            <div class="stat-value" id="stat-pending-docs">5</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Approved Documents</div>
+                            <div class="stat-value" id="stat-approved-docs">12</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💬</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Unread Messages</div>
+                            <div class="stat-value" id="stat-unread-messages">2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active deals section -->
+                <section class="deals-section" aria-label="Active facilities">
+                    <h2>Active Facilities</h2>
+                    <div class="deals-list" id="deals-list">
+                        <!-- Deal items will be populated here -->
+                        <div class="deal-card">
+                            <div class="deal-header">
+                                <h3>Tech Startup Growth Fund - Series B</h3>
+                                <span class="deal-status-badge status-active">Active</span>
+                            </div>
+                            <div class="deal-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Facility Amount:</span>
+                                    <span class="detail-value">$5,000,000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Underwriter:</span>
+                                    <span class="detail-value">Sarah Johnson</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Expected Closure:</span>
+                                    <span class="detail-value">July 30, 2026</span>
+                                </div>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-label">
+                                    <span>Application Progress</span>
+                                    <span class="progress-percentage" id="progress-deal-1">65%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary expand-btn" aria-expanded="false" aria-controls="deal-1-details">View Details</button>
+                        </div>
+
+                        <div class="deal-card">
+                            <div class="deal-header">
+                                <h3>Manufacturing Equipment Financing</h3>
+                                <span class="deal-status-badge status-in-review">In Review</span>
+                            </div>
+                            <div class="deal-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Facility Amount:</span>
+                                    <span class="detail-value">$2,500,000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Underwriter:</span>
+                                    <span class="detail-value">Michael Chen</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Expected Closure:</span>
+                                    <span class="detail-value">August 15, 2026</span>
+                                </div>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-label">
+                                    <span>Application Progress</span>
+                                    <span class="progress-percentage" id="progress-deal-2">45%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary expand-btn" aria-expanded="false" aria-controls="deal-2-details">View Details</button>
+                        </div>
+
+                        <div class="deal-card">
+                            <div class="deal-header">
+                                <h3>Commercial Real Estate Expansion Loan</h3>
+                                <span class="deal-status-badge status-hold">On Hold</span>
+                            </div>
+                            <div class="deal-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Facility Amount:</span>
+                                    <span class="detail-value">$8,500,000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Underwriter:</span>
+                                    <span class="detail-value">Emily Rodriguez</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Expected Closure:</span>
+                                    <span class="detail-value">September 30, 2026</span>
+                                </div>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-label">
+                                    <span>Application Progress</span>
+                                    <span class="progress-percentage" id="progress-deal-3">25%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 25%;"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary expand-btn" aria-expanded="false" aria-controls="deal-3-details">View Details</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Documents section -->
+        <section id="documents" class="section" data-section="documents" aria-label="Document management">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Documents</h1>
+                    <p class="section-subtitle">Upload and track your due diligence documents</p>
+                </div>
+
+                <!-- Document upload area -->
+                <div class="upload-section">
+                    <div class="upload-area" id="upload-area" aria-label="Drag and drop file upload area">
+                        <div class="upload-icon">📁</div>
+                        <h3>Drag and drop your files here</h3>
+                        <p>or click to browse</p>
+                        <input type="file" id="file-input" multiple hidden aria-label="Select files to upload">
+                    </div>
+                </div>
+
+                <!-- Document categories -->
+                <div class="document-categories">
+                    <button class="category-tab active" data-category="all" aria-selected="true">All Documents</button>
+                    <button class="category-tab" data-category="financial" aria-selected="false">Financial Statements</button>
+                    <button class="category-tab" data-category="legal" aria-selected="false">Legal Documents</button>
+                    <button class="category-tab" data-category="tax" aria-selected="false">Tax Documents</button>
+                </div>
+
+                <!-- Documents list -->
+                <div class="documents-list" id="documents-list" role="list">
+                    <!-- Sample documents -->
+                    <div class="document-item" role="listitem">
+                        <div class="document-icon">📊</div>
+                        <div class="document-info">
+                            <div class="document-name">Financial_Statements_Q1_2026.pdf</div>
+                            <div class="document-meta">
+                                <span class="document-size">2.4 MB</span>
+                                <span class="document-date">Uploaded June 28, 2026</span>
+                            </div>
+                        </div>
+                        <div class="document-status">
+                            <span class="status-badge status-approved">Approved</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn-icon" aria-label="Download document" title="Download">⬇️</button>
+                            <button class="btn-icon" aria-label="Delete document" title="Delete">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="document-item" role="listitem">
+                        <div class="document-icon">📄</div>
+                        <div class="document-info">
+                            <div class="document-name">Business_License.pdf</div>
+                            <div class="document-meta">
+                                <span class="document-size">1.1 MB</span>
+                                <span class="document-date">Uploaded June 27, 2026</span>
+                            </div>
+                        </div>
+                        <div class="document-status">
+                            <span class="status-badge status-review">Under Review</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn-icon" aria-label="Download document" title="Download">⬇️</button>
+                            <button class="btn-icon" aria-label="Delete document" title="Delete">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messaging section -->
+        <section id="messaging" class="section" data-section="messaging" aria-label="Messaging with underwriters">
+            <div class="container messaging-container">
+                <div class="section-header">
+                    <h1>Messages</h1>
+                    <p class="section-subtitle">Communicate with your underwriters</p>
+                </div>
+
+                <div class="messaging-layout">
+                    <!-- Conversations list -->
+                    <aside class="conversations-panel" aria-label="Conversations list">
+                        <h2 class="panel-title">Conversations</h2>
+                        <div class="conversations-list" id="conversations-list" role="list">
+                            <div class="conversation-item active" role="listitem">
+                                <div class="conversation-header">
+                                    <div class="conversation-name">Sarah Johnson</div>
+                                    <div class="conversation-badge">2</div>
+                                </div>
+                                <div class="conversation-preview">Last message preview...</div>
+                                <div class="conversation-timestamp">2 minutes ago</div>
+                            </div>
+                            <div class="conversation-item" role="listitem">
+                                <div class="conversation-header">
+                                    <div class="conversation-name">Michael Chen</div>
+                                </div>
+                                <div class="conversation-preview">Previous message...</div>
+                                <div class="conversation-timestamp">1 hour ago</div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Message thread -->
+                    <div class="messages-panel">
+                        <div class="thread-header">
+                            <h2 id="current-conversation">Sarah Johnson</h2>
+                            <p class="thread-subtitle">Underwriter - Tech Startup Growth Fund</p>
+                        </div>
+
+                        <div class="messages-thread" id="messages-thread" role="log" aria-label="Message thread">
+                            <div class="message received">
+                                <div class="message-avatar">SJ</div>
+                                <div class="message-content">
+                                    <div class="message-text">Hi Jane, I've reviewed your initial application. Looking good so far!</div>
+                                    <div class="message-timestamp">2 minutes ago</div>
+                                </div>
+                            </div>
+
+                            <div class="message sent">
+                                <div class="message-content">
+                                    <div class="message-text">Great! Do you need any additional documents from us?</div>
+                                    <div class="message-timestamp">1 minute ago</div>
+                                </div>
+                            </div>
+
+                            <div class="message received">
+                                <div class="message-avatar">SJ</div>
+                                <div class="message-content">
+                                    <div class="message-text">Yes, we need updated tax returns and bank statements for the last 6 months.</div>
+                                    <div class="message-timestamp">Just now</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Message input -->
+                        <div class="message-input-area">
+                            <textarea id="message-input" class="message-input" placeholder="Type your message here..." rows="3" aria-label="Message input"></textarea>
+                            <button class="btn btn-primary send-btn" aria-label="Send message">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings section -->
+        <section id="settings" class="section" data-section="settings" aria-label="Settings and profile">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Settings</h1>
+                    <p class="section-subtitle">Manage your profile and preferences</p>
+                </div>
+
+                <div class="settings-content">
+                    <div class="settings-tabs">
+                        <button class="settings-tab active" data-tab="profile" aria-selected="true">Profile</button>
+                        <button class="settings-tab" data-tab="account" aria-selected="false">Account</button>
+                        <button class="settings-tab" data-tab="notifications" aria-selected="false">Notifications</button>
+                    </div>
+
+                    <!-- Profile tab -->
+                    <div class="settings-panel active" id="profile-panel">
+                        <h2>Profile Information</h2>
+                        <form class="settings-form" id="profile-form" novalidate>
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" value="Jane Freiler" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company-name">Company Name</label>
+                                <input type="text" id="company-name" value="Tech Startup Inc." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" value="jane@techstartup.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" value="(555) 123-4567">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Account tab -->
+                    <div class="settings-panel" id="account-panel">
+                        <h2>Account Settings</h2>
+                        <form class="settings-form" id="account-form" novalidate>
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" id="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" id="new-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <input type="password" id="confirm-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Change Password</button>
+                        </form>
+                    </div>
+
+                    <!-- Notifications tab -->
+                    <div class="settings-panel" id="notifications-panel">
+                        <h2>Notification Preferences</h2>
+                        <form class="settings-form" id="notifications-form">
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="email-notifications" checked>
+                                    <span>Email notifications</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="message-notifications" checked>
+                                    <span>Message notifications</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="document-notifications" checked>
+                                    <span>Document update notifications</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Preferences</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Axos Bank Fund Finance Portal</h3>
+                    <p>&copy; 2026 Axos Bank. All rights reserved.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>
