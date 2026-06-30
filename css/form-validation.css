@@ -1,0 +1,226 @@
+/* Form Validation Styles */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group label .required {
+    color: #f44336;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #003366;
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+/* Error States */
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+    border-color: #f44336;
+    background-color: #ffebee;
+}
+
+.form-group input.error:focus,
+.form-group textarea.error:focus,
+.form-group select.error:focus {
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+}
+
+/* Success States */
+.form-group input.success,
+.form-group textarea.success,
+.form-group select.success {
+    border-color: #4CAF50;
+}
+
+.form-group input.success:focus,
+.form-group textarea.success:focus,
+.form-group select.success:focus {
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Error Message */
+.error-message {
+    display: block;
+    color: #f44336;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    font-weight: 500;
+}
+
+/* Help Text */
+.help-text {
+    display: block;
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+/* Checkbox and Radio Styles */
+.checkbox-group,
+.radio-group {
+    margin-bottom: 1rem;
+}
+
+.checkbox-group label,
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-group input,
+.radio-group input {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.3rem;
+}
+
+.strength-bar {
+    height: 4px;
+    flex: 1;
+    background-color: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    background-color: #f44336;
+    width: 0%;
+    transition: all 0.3s ease;
+}
+
+.strength-fill.weak {
+    background-color: #f44336;
+    width: 33%;
+}
+
+.strength-fill.medium {
+    background-color: #ff9800;
+    width: 66%;
+}
+
+.strength-fill.strong {
+    background-color: #4CAF50;
+    width: 100%;
+}
+
+.strength-text {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    color: #999;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+button[type="submit"],
+button[type="reset"],
+button[type="button"] {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"] {
+    background-color: #003366;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #005599;
+}
+
+button[type="submit"]:focus {
+    outline: 3px solid #005599;
+    outline-offset: 2px;
+}
+
+button[type="reset"],
+button[type="button"] {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+button[type="reset"]:hover,
+button[type="button"]:hover {
+    background-color: #e8e8e8;
+}
+
+/* Validation Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+    }
+
+    button[type="submit"],
+    button[type="reset"],
+    button[type="button"] {
+        width: 100%;
+    }
+}
