@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axos Bank Finance Portal - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="nav-brand">
+                <h1>Axos Finance Portal</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="pages/deals.html">My Deals</a></li>
+                <li><a href="pages/documents.html">Documents</a></li>
+                <li><a href="pages/messages.html">Messages</a></li>
+                <li><a href="pages/settings.html">Settings</a></li>
+                <li><a href="pages/login.html" class="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard" role="main">
+            <section class="dashboard-header">
+                <h2>Welcome, User</h2>
+                <p>Your Finance Portal Dashboard</p>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="quick-stats" aria-label="Quick Statistics">
+                <div class="stat-card">
+                    <h3>Active Deals</h3>
+                    <p class="stat-value">5</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Documents</h3>
+                    <p class="stat-value">3</p>
+                </div>
+                <div class="stat-card">
+                    <h3>New Messages</h3>
+                    <p class="stat-value">2</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Completion Rate</h3>
+                    <p class="stat-value">78%</p>
+                </div>
+            </section>
+
+            <!-- Recent Deals Overview -->
+            <section class="recent-deals" aria-label="Recent Deals">
+                <h3>Recent Deals</h3>
+                <table class="deals-table">
+                    <thead>
+                        <tr>
+                            <th>Deal ID</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                            <th>Last Updated</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DEAL-001</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                            <td>$250,000</td>
+                            <td>2 hours ago</td>
+                            <td><a href="#">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>DEAL-002</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                            <td>$150,000</td>
+                            <td>5 hours ago</td>
+                            <td><a href="#">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>DEAL-003</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                            <td>$500,000</td>
+                            <td>1 day ago</td>
+                            <td><a href="#">View Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Axos Bank Finance Portal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

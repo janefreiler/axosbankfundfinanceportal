@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Axos Bank Finance Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="nav-brand">
+                <h1>Axos Finance Portal</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="deals.html">My Deals</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="messages.html" class="active">Messages</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html" class="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main role="main">
+            <section class="content-header">
+                <h2>Messages</h2>
+                <p>Real-time communication with underwriters</p>
+            </section>
+
+            <section class="messaging-container">
+                <div class="message-list" role="log" aria-label="Messages">
+                    <div class="empty-state">No messages yet. Start a conversation with an underwriter.</div>
+                </div>
+
+                <div class="message-input">
+                    <form id="messageForm">
+                        <textarea 
+                            id="messageText" 
+                            name="message" 
+                            placeholder="Type your message..."
+                            rows="4"
+                            aria-label="Message input"
+                        ></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Axos Bank Finance Portal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/messages.js"></script>
+</body>
+</html>

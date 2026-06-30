@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Deals - Axos Bank Finance Portal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="nav-brand">
+                <h1>Axos Finance Portal</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="deals.html" class="active">My Deals</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="login.html" class="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main role="main">
+            <section class="content-header">
+                <h2>My Deals</h2>
+                <p>View and manage all your active deals</p>
+            </section>
+
+            <section class="deals-filter">
+                <label for="status-filter">Filter by Status:</label>
+                <select id="status-filter" name="status">
+                    <option value="all">All Deals</option>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </section>
+
+            <section class="deals-list" aria-label="Deals List">
+                <!-- Content will be populated here -->
+                <div class="empty-state">No deals found. Create a new deal to get started.</div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Axos Bank Finance Portal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../js/deals.js"></script>
+</body>
+</html>
